@@ -5,6 +5,9 @@ on:
     branches: [ main, master ]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -24,9 +27,19 @@ jobs:
           chmod +x gradlew
           ./gradlew assembleDebug --no-daemon --stacktrace
 
+      - name: Renomear o APK
+        run: cp android/app/build/outputs/apk/debug/app-debug.apk midia-indoor.apk
+
       - name: Publicar o APK como artefato
         uses: actions/upload-artifact@v4
         with:
           name: midia-indoor-apk
-          path: android/app/build/outputs/apk/debug/*.apk
+          path: midia-indoor.apk
           if-no-files-found: error
+
+      - name: Publicar o Release com link direto
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest
+          name: Midia Indoor - ultima versao
+          files: midia-indoor.apk
