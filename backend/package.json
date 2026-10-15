@@ -1,0 +1,13 @@
+{
+  "name": "signage-backend",
+  "version": "0.1.0",
+  "description": "API do sistema de midia indoor (digital signage) - sem dependencias externas",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node --experimental-sqlite src/server.js"
+  },
+  "engines": {
+    "node": ">=22.5"
+  }
+}

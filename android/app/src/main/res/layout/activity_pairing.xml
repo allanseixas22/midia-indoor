@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#0f1115"
+    android:padding="40dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textColor="#ffffff"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="6dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Parear esta tela"
+        android:textColor="#9aa3b2"
+        android:textSize="16sp"
+        android:layout_marginBottom="28dp" />
+
+    <EditText
+        android:id="@+id/serverInput"
+        android:layout_width="420dp"
+        android:layout_height="wrap_content"
+        android:hint="Endereço do servidor (ex: http://192.168.0.10:4000)"
+        android:textColorHint="#6b7280"
+        android:textColor="#ffffff"
+        android:inputType="textUri"
+        android:layout_marginBottom="14dp" />
+
+    <EditText
+        android:id="@+id/codeInput"
+        android:layout_width="420dp"
+        android:layout_height="wrap_content"
+        android:hint="Código de 6 dígitos (gerado no painel)"
+        android:textColorHint="#6b7280"
+        android:textColor="#ffffff"
+        android:inputType="number"
+        android:maxLength="6"
+        android:layout_marginBottom="22dp" />
+
+    <Button
+        android:id="@+id/pairButton"
+        android:layout_width="420dp"
+        android:layout_height="wrap_content"
+        android:text="Parear" />
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#e5b94d"
+        android:layout_marginTop="18dp" />
+</LinearLayout>
